@@ -13,16 +13,16 @@
   app.use(methodOverride("_method"));
   app.engine("ejs", ejsMate);
   
-//   const mongoUrl = "mongodb://127.0.0.1:27017/hackMatch";
-//   async function main() {
-//     await mongoose.connect(mongoUrl);
-//   }
+  const mongoUrl = "mongodb://127.0.0.1:27017/HackMatch";
+  async function main() {
+    await mongoose.connect(mongoUrl);
+  }
   
-//   main()
-//     .then(() => {
-//       console.log("Connection Succeeded");
-//     })
-//     .catch((err) => console.log(err));
+  main()
+    .then(() => {
+      console.log("Connection Succeeded");
+    })
+    .catch((err) => console.log(err));
 
 let port = 8080;
 app.listen(port, (req,res)=>{
@@ -31,4 +31,8 @@ app.listen(port, (req,res)=>{
 
 app.get("/index", (req,res)=>{
     res.render("index.ejs");
+})
+
+app.post("/index", (req,res)=>{
+  
 })
