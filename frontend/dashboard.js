@@ -16,12 +16,12 @@ document.addEventListener("DOMContentLoaded", function() {
       techStackInputs.appendChild(input);
     });
   
-    searchBtn.addEventListener('click', function() {
+    /*searchBtn.addEventListener('click', function() {
       techStacks = Array.from(document.querySelectorAll('.tech-stack-input')).map(input => input.value.trim()).filter(stack => stack !== '');
       displayResults();
-    });
+    });*/
   
-    function displayResults() {
+    /*function displayResults() {
       resultSection.classList.remove('hidden');
       resultList.innerHTML = '';
       if (techStacks.length > 0) {
@@ -44,6 +44,6 @@ document.addEventListener("DOMContentLoaded", function() {
   
     window.sendNotification = function() {
       alert(`Email Send`);
-    };
+    };*/
   });
   
