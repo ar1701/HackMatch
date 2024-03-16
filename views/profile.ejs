@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="/css/profile.css">
+  </head>
+  <body>
+
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <span class="logo">HackMatch</span>
+      </div>
+      <div class="navbar-menu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a href="/profile"
+              class="nav-link">Profile</a></li>
+              <li class="nav-item"><a href="/dash" class="nav-link">Dashboard</a></li>
+            </ul>
+      </div>
+    </nav>
+
+    <nav class="sub-navbar">
+      <ul class="sub-navbar-nav">
+        <li><a href="/user/home" class="sub-nav-link active">Home</a></li>
+        <li><a href="/profile/education" class="sub-nav-link">Work
+            Experience</a></li>
+        <li><a href="./profile/exp" class="sub-nav-link">Resume Upload</a></li>
+        <li><a href="/profile/project" class="sub-nav-link">Projects</a></li>
+        <li><a href="/profile/link" class="sub-nav-link">Skills</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="container">
+        <div class="left-section">
+          <section id="about" class="section active">
+            <h2>Basic Information</h2>
+            <form method="post" action="/profile?_method=PATCH">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name"
+                value=""><br><br>
+              <label for="gender">Gender:</label>
+              <select id="gender" name="gender">
+                <option value disabled >Select an option</option>
+                <option value="male" selected>Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select><br><br>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email"
+                value=""><br><br>
+              <label for="phone">Phone:</label>
+              <input type="text" id="phone" name="phone"
+                value=""><br><br>
+
+            </section>
+          </div>
+          <div class="right-section">
+            <section id="about" class="section active">
+              <h2>About You</h2>
+              <form>
+                <label for="bio">Bio:</label><br>
+                <textarea id="bio" name="bio" rows="12"
+                  cols="100"></textarea><br><br>
+                <input type="submit" value="Submit">
+              </form>
+            </section>
+          </div>
+        </div>
+      </main>
+      <!-- 
+<script >
+    
+
+document.addEventListener("DOMContentLoaded", function() {
+    const subNavLinks = document.querySelectorAll('.sub-nav-link');
+    const sections = document.querySelectorAll('.section');
+
+    sections[0].classList.add('active');
+
+    function toggleActiveLink() {
+        subNavLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+        this.classList.add('active');
+    }
+
+    function showSection(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        sections.forEach(section => {
+            section.classList.remove('active');
+            if (section.id === targetId) {
+                section.classList.add('active');
+            }
+        });
+    }
+
+  
+    subNavLinks.forEach(link => {
+        link.addEventListener('click', toggleActiveLink);
+        link.addEventListener('click', showSection);
+    });
+});
+
+
+</script> -->
+    </body>
+  </html>

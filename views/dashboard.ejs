@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Stack Search</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+          <span class="logo">HackMatch</span>
+        </div>
+        <div class="navbar-menu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Dashboard</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      <nav class="sub-navbar">
+        <ul class="sub-navbar-nav">
+          <li><a href="/user/home" class="sub-nav-link active">Home</a></li>
+          <li><a href="/profile/education" class="sub-nav-link">Work Experience</a></li>
+          <li><a href="/profile/exp" class="sub-nav-link">Resume Upload</a></li>
+          <li><a href="/profile/project" class="sub-nav-link">Projects</a></li>
+          <li><a href="/profile/link" class="sub-nav-link">Skills</a></li>
+        </ul>
+      </nav>
+      
+  <section class="tech-stack-section">
+   
+    <br>
+    <h2>Enter Tech Stack</h2>
+    <form id="tech-stack-form">
+      <div id="tech-stack-inputs">
+        <input type="text" class="tech-stack-input" placeholder="Enter tech stack">
+      </div>
+      <div id="tech-stack-inputs">
+        <input type="text" class="tech-stack-input" placeholder="Enter tech stack">
+      </div>
+      <div id="tech-stack-inputs">
+        <input type="text" class="tech-stack-input" placeholder="Enter tech stack">
+      </div>
+      <div id="tech-stack-inputs">
+        <input type="text" class="tech-stack-input" placeholder="Enter tech stack">
+      </div>
+      <div id="tech-stack-inputs">
+        <input type="text" class="tech-stack-input" placeholder="Enter tech stack">
+      </div>
+     
+      <button type="button" id="add-tech-stack-btn">Submit</button>
+      <br><br>
+      <div class ="id">
+     <h2>Search For HackMates</h2>
+     </div>
+     <div class ="id">
+      <div class="bus" id="search-btn"> <a href ="/result" >Search</a></button>
+      </div>
+    </form>
+
+    
+  </section>
+  
+  <section id="result-section" class="hidden">
+    <div id="result-list"></div>
+  </section>
+
+  <!-- <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const addTechStackBtn = document.getElementById('add-tech-stack-btn');
+    const searchBtn = document.getElementById('search-btn');
+    const techStackForm = document.getElementById('tech-stack-form');
+    const techStackInputs = document.getElementById('tech-stack-inputs');
+    const resultList = document.getElementById('result-list');
+    const resultSection = document.getElementById('result-section');
+  
+    let techStacks = [];
+  
+    addTechStackBtn.addEventListener('click', function() {
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.classList.add('tech-stack-input');
+      input.placeholder = 'Enter tech stack';
+      techStackInputs.appendChild(input);
+    });
+  
+  });
+  
+  </script> -->
+</body>
+</html>

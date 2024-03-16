@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HackMatch</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .buttons {
+        display: flex;
+      justify-content:space-evenly;
+      align-items: center;
+  padding: 50px;
+  margin-top: 60px;
+}
+ h1{
+    margin-top: 40px;
+ }
+
+    .container {
+        width:600px;
+      
+      height:300px;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .bus {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      margin: 0 10px;
+    }
+    .bus a {
+      padding: 10px 20px;
+      text-decoration:none;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      margin: 0 10px;
+    }
+
+    .bus:hover {
+      background-color: #0056b3;
+      padding: 10px 20px;
+      text-decoration:none;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #fff;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Welcome to HackMatch</h1>
+  
+  <div class="buttons">
+    
+    <div class ="bus"><a href="/login" class="login-btn">Login</a></div>
+    <div class ="bus"> <a href="/signup" class="signup-btn">SignUp</a></div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('login-btn').addEventListener('click', function() {
+    alert('Login button clicked!');
+    // Add your login logic here
+  });
+
+  document.getElementById('signup-btn').addEventListener('click', function() {
+    alert('Sign Up button clicked!');
+    // Add your sign up logic here
+  });
+</script>
+
+</body>
+</html>

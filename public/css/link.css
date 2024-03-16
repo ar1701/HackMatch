@@ -1,0 +1,111 @@
+/* profile_link.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; 
+    margin: 0;
+}
+
+.navbar {
+    height: 80px;
+    background-color: #0056b3;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.navbar-menu ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-right: 20px;
+}
+
+.navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sub-navbar {
+    background-color:#0056b3;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.sub-navbar-nav {
+    list-style-type: none;
+    display: flex;
+}
+
+.sub-navbar-nav li {
+    margin-right: 20px;
+}
+
+.sub-navbar-nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sub-navbar-nav a.active {
+    font-weight: bold;
+}
+
+
+.container {
+    max-width: 900px; 
+    margin: 150px auto; /* Center the container and add spacing from top */
+    display: flex; /* Set container as flexbox */
+    flex-direction: column; /* Align sections vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.section {
+    width: 100%; /* Set width for sections */
+    border-radius: 10px; /* Add border radius */
+    background-color: #fff; /* White background */
+    padding: 20px; /* Add padding */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+    margin-bottom: 20px; /* Add margin between sections */
+}
+
+input[type="text"] {
+    width: 100%; /* Adjust width to 100% */
+    padding: 10px;
+    margin-bottom: 15px; /* Add spacing between inputs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+h2{
+    margin-bottom: 15px;
+}
