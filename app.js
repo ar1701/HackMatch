@@ -304,8 +304,8 @@ app.post("/dashboard", async(req,res)=>{
 
 app.post("/profile/education", async (req, res) => {
   let { companyName, summary, role, duration } = req.body;
-  const { email } = req.session.user;
-  const user = await User.findOne({ email });
+  const { username} = req.session.user;
+  const user = await User.findOne({ username });
 
   let newExp = new workExp({
     user: user._id,
