@@ -1,22 +1,22 @@
 const mongoose = require("mongoose");
-const schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const userSchema = new schema({
+const userSchema = new Schema({
   name: String,
   email: String,
-  skills: [
-    {
-      name: String,
-      level: Number,
-    },
-  ],
-  links: [
-    {
-        name: String,
-        url: String,
-        // default: "0",
-    }
-  ],
+  phone: Number,
+//   skills: [
+//     {
+//       name: String,
+//       level: Number,
+//     },
+//   ],
+//   links: [
+//     {
+//         name: String,
+//         url: String,
+//     }
+//   ],
 });
 
 const User = new mongoose.model("User", userSchema);

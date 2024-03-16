@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile Page</title>
+        <link rel="stylesheet" href="/css/profile.css">
+    </head>
+    <body>
+
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <span class="logo">HackMatch</span>
+            </div>
+            <div class="navbar-menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#"
+                            class="nav-link">Profile</a></li>
+                    <li class="nav-item"><a href="#"
+                            class="nav-link">Dashboard</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <nav class="sub-navbar">
+            <ul class="sub-navbar-nav">
+                <li><a href="/user/home" class="sub-nav-link active">About</a></li>
+                <li><a href="/profile/education" class="sub-nav-link">Education</a></li>
+                <li><a href="/profile/exp" class="">Experience</a></li>
+                <li><a href="/profile/project" class="">Projects</a></li>
+                <li><a href="/profile/link" class="sub-nav-link">Links</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="container">
+                <section id="about" class="section active">
+                    <div class="left-section">
+                        <h2>Basic Information</h2>
+                        <form action="/profile?_method=PATCH" method="POST">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name"
+                                value="<%= name %>"><br><br>
+                            <label for="gender">Gender:</label>
+                            <select id="gender" name="gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select><br><br>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email"
+                                value="<%= email %>"><br><br>
+                            <label for="phone">Phone:</label>
+                            <input type="text" id="phone" name="phone"
+                                value="<%= phone %>"><br><br>
+
+                        </div>
+                        <div class="right-section">
+                            <h2>About You</h2>
+
+                            <label for="bio">Bio:</label><br>
+                            <textarea id="bio" name="bio" rows="5"
+                                cols="40" value=""></textarea><br><br>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <script src="profile_abt_scripts.js"></script>
+    </body>
+</html>
