@@ -20,14 +20,14 @@
   </div>
 </nav>
 
+
 <nav class="sub-navbar">
   <ul class="sub-navbar-nav">
-    <li><a href="#" class="sub-nav-link active">About</a></li>
-    <li><a href="#" class="sub-nav-link">Education</a></li>
-    <li><a href="#" class="sub-nav-link">Experience</a></li>
+    <li><a href="#" class="sub-nav-link active">Home</a></li>
+    <li><a href="#" class="sub-nav-link">Work Experience</a></li>
+    <li><a href="#" class="sub-nav-link">Resume Upload</a></li>
     <li><a href="#" class="sub-nav-link">Projects</a></li>
-    <li><a href="#" class="sub-nav-link">Links</a></li>
-    <li><a href="#" class="sub-nav-link">Skills</a></li> <!-- New section for skills -->
+    <li><a href="#" class="sub-nav-link">Skills</a></li>
   </ul>
 </nav>
 
@@ -39,6 +39,15 @@
       <form id="links-form">
         <div id="links-container">
           <div class="link-input">
+            <input type="text" name="link[]">
+            <select name="social-option">
+              <option value="" disabled selected>Select an option</option>
+            <option value="Linkedln">Linkedln</option>
+
+                <option value="GitHub">GitHub</option>
+                <option value="Twitter">Twitter</option>
+                <option value="YouTube">YouTube</option>
+            </select>
             <!---<label for="linkedin">LinkedIn:</label>
             <input type="text" name="linkedin[]"><br><br>--->
             <button type="button" class="add-btn">Add</button>

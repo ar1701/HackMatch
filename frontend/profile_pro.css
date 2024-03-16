@@ -1,22 +1,19 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa; 
+    background-color: #f8f9fa;
     margin: 0;
 }
 
-
 .navbar {
     height: 80px;
-    background-color: #0056b3; 
-    color: #fff; 
+    background-color: #0056b3;
+    color: #fff;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -42,8 +39,8 @@ body {
 }
 
 .sub-navbar {
-    background-color: #007bff; 
-    color: #fff; 
+    background-color:#0056b3;
+    color: #fff;
     padding: 10px 20px;
 }
 
@@ -65,41 +62,68 @@ body {
     font-weight: bold;
 }
 
+.intro-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.intro-section span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
 .container {
-    max-width: 800px; 
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    border: 1px solid #ccc;
     border-radius: 10px;
-    border: 1px solid #ccc; /* Add border */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height:350px;
-    background-color: #f8f9fa;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center the text */
 }
-.upload-section {
-    text-align: center;
-  }
-.file-input-wrapper {
-    display: inline-block;
-    margin-bottom: 10px;
-  }
 
 form {
-    margin-top: 150px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
-
 h2 {
-    margin-bottom: 20px;
+    margin-top:30px;
+    margin: 12px;
+  }
+
+
+label {
+    padding-bottom:20px;
+    
 }
 
-input[type="file"] {
-    display: block;
+input[type="text"] {
+    width: calc(100% - 40px);
+    padding: 10px;
     margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.stack-input {
+    width: calc(100% - 40px);
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+  .sub-nav-link.active {
+    text-decoration: underline;
 }
 
 input[type="submit"] {
@@ -109,6 +133,7 @@ input[type="submit"] {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 input[type="submit"]:hover {
@@ -136,4 +161,3 @@ input[type="submit"]:hover {
     margin-top: 10px;
     color: #555;
   }
- 

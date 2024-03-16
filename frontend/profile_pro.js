@@ -1,17 +1,29 @@
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    const pdfUploadForm = document.getElementById('pdf-upload-form');
-    const pdfFileInput = document.getElementById('pdf-file');
+    const addStackButton = document.getElementById('add-stack');
+    const stacksContainer = document.getElementById('stacks-container');
 
-    pdfUploadForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const file = pdfFileInput.files[0];
-        if (file && file.type === 'application/pdf') {
-           
-            console.log('File uploaded:', file.name);
-        } else {
-            alert('Please select a PDF file.');
-        }
+    addStackButton.addEventListener('click', function() {
+        const stackInput = document.createElement('input');
+        stackInput.type = 'text';
+        stackInput.name = 'stack[]';
+        stackInput.classList.add('stack-input');
+        stackInput.placeholder = 'Enter stack';
+        stacksContainer.appendChild(stackInput);
+        stacksContainer.appendChild(document.createElement('br'));
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const subNavLinks = document.querySelectorAll('.sub-nav-link');
+
+    subNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            subNavLinks.forEach(item => {
+                item.classList.remove('active');
+            });
+            this.classList.add('active');
+        });
     });
 });

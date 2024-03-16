@@ -25,11 +25,11 @@
 
 <nav class="sub-navbar">
     <ul class="sub-navbar-nav">
-      <li><a href="#" class="sub-nav-link active">About</a></li>
-      <li><a href="#" class="sub-nav-link">Education</a></li>
-      <li><a href="#" class="sub-nav-link">Experience</a></li>
+      <li><a href="#" class="sub-nav-link active">Home</a></li>
+      <li><a href="#" class="sub-nav-link">Work Experience</a></li>
+      <li><a href="#" class="sub-nav-link">Resume Upload</a></li>
       <li><a href="#" class="sub-nav-link">Projects</a></li>
-      <li><a href="#" class="sub-nav-link">Links</a></li>
+      <li><a href="#" class="sub-nav-link">Skills</a></li>
     </ul>
   </nav>
   
@@ -38,40 +38,32 @@
   <div class="container">
     <section id="education" class="section active">
       <form>
-        <label for="degree-type">Degree Type:</label>
+        <label for="company-name">Company Name:</label>
         <input type="text" id="degree-type" name="degree-type"><br><br>
-        <label for="institution">Educational Institution:</label>
+        <label for="summary">Summary:</label>
         <input type="text" id="institution" name="institution"><br><br>
-        <label for="field-of-study">Field of Study:</label>
+        <label for="role">Role:</label>
         <input type="text" id="field-of-study" name="field-of-study"><br><br>
         
-        <label for="expected-month">Expected Month of Graduation:</label>
+        <label for="expected-month">Duration:</label>
        
         <select id="expected-month" name="expected-month">
-            <option value="January">January</option>
-            <option value="February">February</option>
-            <option value="March">March</option>
-            <option value="April">April</option>
-            <option value="May">May</option>
-            <option value="June">June</option>
-            <option value="July">July</option>
-            <option value="August">August</option>
-            <option value="September">September</option>
-            <option value="October">October</option>
-            <option value="November">November</option>
-            <option value="December">December</option>
+          <option value="" disabled selected>Select an option</option>
+            <option value="1">1 month</option>
+            <option value="2">2 months</option>
+            <option value="3">3 months</option>
+            <option value="4">4 months</option>
+            <option value="5">5 months</option>
+            <option value="6">6 months</option>
+            <option value="7">7 months</option>
+            <option value="8"> 8 months</option>
+            <option value="9"> 9 months</option>
+            <option value="10">10 months</option>
+            <option value="11">11 month</option>
+            <option value="12">1 year</option>
           </select><br><br>
         
-        <label for="expected-year">Expected Year of Graduation:</label>
-        
-        <select id="expected-year" name="expected-year">
-        <option value="2023">2023</option>
-        <option value="2024">2024</option>
-        <option value="2025">2025</option>
-        <option value="2023">2026</option>
-        <option value="2024">2027</option>
-        <option value="2025">2028</option>
-        </select><br><br>
+     
         
         <input type="submit" value="Submit">
       </form>
