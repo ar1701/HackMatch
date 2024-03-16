@@ -29,17 +29,7 @@ HackMatch is a web application designed to facilitate team formation for various
 
 2. **Install Dependencies**: Install the necessary dependencies by running the following command:
 
-    ```bash
-    pip install -r requirements.txt
-    ```
-
 3. **Run Application**: Launch the application by executing the following command:
-
-    ```bash
-    python app.py
-    ```
-
-4. **Access Application**: Access the application through your web browser at `http://localhost:5000`.
 
 ## Technologies Used
 
