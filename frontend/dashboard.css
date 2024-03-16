@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+}
+
+.container {
+    max-width: 950px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.notification-section {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    height:400px;
+}
+
+.notification-section h2 {
+    margin-bottom: 10px;
+}
+
+.notification-section form {
+    display: flex;
+    align-items: center;
+}
+
+.notification-section input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.notification-section button {
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.notification-section button:hover {
+    background-color: #0056b3;
+}
+
+.received-notification,.send-notification{
+    border: 1px solid black;
+    padding:20px;
+    margin:20px;
+    width: 800px;
+
+
+}
+
+.tech-stack-section{
+    margin-top:30px;
+}
+
+.tech-stack-section h2 {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+.tech-stack-section form {
+    display: flex;
+    align-items: center;
+}
+
+.tech-stack-section input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.tech-stack-section button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tech-stack-section button:hover {
+    background-color: #0056b3;
+}
+
+.navbar {
+    height: 80px;
+    background-color: #0056b3; /* Dark background */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.navbar-menu ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-right: 20px;
+}
+.navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sub-navbar {
+    background-color: #0056b3; 
+    color: #fff; 
+    padding: 10px 20px;
+}
+
+.sub-navbar-nav {
+    list-style-type: none;
+    display: flex;
+}
+
+.sub-navbar-nav li {
+    margin-right: 20px;
+}
+
+.sub-navbar-nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sub-navbar-nav a.active {
+    font-weight: bold;
+}

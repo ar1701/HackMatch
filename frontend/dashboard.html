@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+          <span class="logo">HackMatch</span>
+        </div>
+        <div class="navbar-menu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Dashboard</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      
+      <nav class="sub-navbar">
+        <ul class="sub-navbar-nav">
+          <li><a href="#" class="sub-nav-link active">Home</a></li>
+          <li><a href="#" class="sub-nav-link">Work Experience</a></li>
+          <li><a href="#" class="sub-nav-link">Resume Upload</a></li>
+          <li><a href="#" class="sub-nav-link">Projects</a></li>
+          <li><a href="#" class="sub-nav-link">Skills</a></li>
+        </ul>
+      </nav>
+
+<div class="container">
+  <section class="notification-section">
+    <div class="received-notification">
+      <h2>Received Notification</h2>
+      <ul id="received-notification-list">
+        <!-- Received notification items will be dynamically added here -->
+      </ul>
+    </div>
+    <div class="send-notification">
+      <h2>Send Notification</h2>
+      <form id="send-notification-form">
+       
+      </form>
+    </div>
+  </section>
+  
+  <section class="tech-stack-section">
+    <h2>Find HackMate</h2>
+    <form id="tech-stack-form">
+      <input type="text" id="tech-stack-input" placeholder="Enter tech stack">
+      <button type="submit">Add</button>
+    </form>
+    <ul id="tech-stack-list">
+      <!-- Tech stack items will be dynamically added here -->
+    </ul>
+  </section>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
