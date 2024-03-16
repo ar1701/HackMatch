@@ -9,7 +9,7 @@
   
   .login-container {
     width:950px;
-    height:525px;
+    height:600px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,7 +47,8 @@
   
   input[type='email'],
   input[type='tel'],
-  input[type='text'] {
+  input[type='text'],
+  input[type='password'] {
     width: calc(100% - 20px);
     padding: 15px;
     border: 1px solid #ccc;
@@ -57,7 +58,7 @@
   }
   
   button {
-    background-color: #007bff;
+  background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
   border: none;

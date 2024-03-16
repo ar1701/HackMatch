@@ -99,31 +99,31 @@
     <div class="result-info">
         <h3><p>Name:<input type="text" id="myInput" name="myInput" ></h3>
           <h3><p>Score:<input type="text" id="myInput" name="myInput"></p></h3>
-          <button onclick="sendNotification()">Send Notification</button>
+          <button onclick="Send()">Send Notification</button>
     </div>
 
     <div class="result-info">
         <h3><p>Name:<input type="text" id="myInput" name="myInput" ></h3>
           <h3><p>Score:<input type="text" id="myInput" name="myInput"></p></h3>
-          <button onclick="sendNotification()">Send Notification</button>
+          <button onclick="Send()">Send Notification</button>
     </div>
 
     <div class="result-info">
         <h3><p>Name:<input type="text" id="myInput" name="myInput" ></h3>
           <h3><p>Score:<input type="text" id="myInput" name="myInput"></p></h3>
-          <button onclick="sendNotification()">Send Notification</button>
+          <button onclick="Send()">Send Notification</button>
     </div>
 
     <div class="result-info">
         <h3><p>Name:<input type="text" id="myInput" name="myInput" ></h3>
           <h3><p>Score:<input type="text" id="myInput" name="myInput"></p></h3>
-          <button onclick="sendNotification()">Send Notification</button>
+          <button onclick="Send()">Send Notification</button>
     </div>
 
     <div class="result-info">
         <h3><p>Name:<input type="text" id="myInput" name="myInput" ></h3>
           <h3><p>Score:<input type="text" id="myInput" name="myInput"></p></h3>
-          <button onclick="sendNotification()">Send Notification</button>
+          <button onclick="Send()">Send an Email</button>
     </div>
 
     
@@ -133,10 +133,24 @@
     <div id="result-list"></div>
   </section>
 
+  <script src="https://smtpjs.com/v3/smtp.js">
+</script>
   <script>
     function Send(){
         console.log("Function call");
-        
+        Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "ishikaishani97@gmail.com",
+        Password : "D41A0785817C05AEEA1254AD6D2FAA1D93E8",
+        To : "ishikaishani97@gmail.com",
+        From : "ishikaishani97@gmail.com",
+        Subject : "This is the subject",
+        Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+
+
     }
   </script>
 </body>

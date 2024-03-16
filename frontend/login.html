@@ -1,3 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    /* styles.css */
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .login-container {
+    width:950px;
+    height:525px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .left-section {
+    flex: 1;
+    padding: 30px;
+    border-right: 1px solid #ccc;
+    
+  }
+  
+  .right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    padding:5px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type='email'],
+  input[type='tel'],
+  input[type='text'],
+  input[type='password'] {
+    width: calc(100% - 20px);
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 18px;
+    outline: none;
+  }
+  
+  button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  h2 {
+    margin: 12px;
+  }
+  
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div id="login"></div>
+  </div>
+  
+  <script>
 
 function EmailInput(value, onChange) {
     return `
@@ -9,14 +101,14 @@ function EmailInput(value, onChange) {
   }
   
 
-  function PhoneInput(value, onChange) {
+  function PasswordInput(value, onChange) {
     return `
       <div class="form-group">
-        <label>Phone Number:</label>
-        <input id="phone" type="tel" value="${value}" onchange="${onChange}" required />
+        <label>Password:</label>
+        <input id="password" type="password" value="${value}" onchange="${onChange}" required />
       </div>
     `;
-  }
+}
   
   function NameInput(value, onChange) {
     return `
@@ -27,25 +119,14 @@ function EmailInput(value, onChange) {
     `;
   }
   
-  function PasswordInput(value, onChange) {
-    return `
-      <div class="form-group">
-        <label>Password:</label>
-        <input id="password" type="password" value="${value}" onchange="${onChange}" required />
-      </div>
-    `;
-}
-
-
  
   function SubmitButton(onClick) {
     return `
       <button type="submit" onclick="${onClick}">
-        Sign In
+        Login
       </button>
     `;
   }
-  
   
 
   function WelcomeMessage() {
@@ -57,12 +138,10 @@ function EmailInput(value, onChange) {
     loginContainer.innerHTML = `
       <div class="login-container">
         <div class="left-section">
-          <h2>SignIn</h2>
+          <h2>LogIn</h2>
           <form id="login-form">
-          ${NameInput('', 'handleNameChange(event)')}
             ${EmailInput('', 'handleEmailChange(event)')}
-            ${PasswordInput('', 'handlePasswordChange(event)')}
-            ${PhoneInput('', 'handlePhoneChange(event)')}
+          ${PasswordInput('', 'handlePasswordChange(event)')}
             ${SubmitButton('handleSubmit(event)')}
           </form>
         </div>
@@ -92,18 +171,14 @@ function EmailInput(value, onChange) {
     const phoneValue = event.target.value;
    
   }
-  
-  function handleNameChange(event) {
 
-    const nameValue = event.target.value;
- 
-  }
   function handlePasswordChange(event) {
 
-    const nameValue = event.target.value;
- 
-  }
+const nameValue = event.target.value;
 
+}
+
+  
   function handleNameChange(event) {
 
     const nameValue = event.target.value;
@@ -120,3 +195,6 @@ function EmailInput(value, onChange) {
 
   }
   
+  </script>
+</body>
+</html>

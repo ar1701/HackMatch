@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const newLinkInput = document.createElement('div');
         newLinkInput.classList.add('link-input');
         newLinkInput.innerHTML = `
+        <form id="links-form">
             <input type="text" name="link[]">
             <select name="social-option">
             <option value="Linkedln">Linkedln</option>
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <option value="YouTube">YouTube</option>
             </select>
             <button type="button" class="add-btn">Add</button> <!-- Add button -->
+            </form>
         `;
         linksContainer.appendChild(newLinkInput);
 
@@ -41,6 +43,15 @@ document.addEventListener("DOMContentLoaded", function() {
             social: socialOptions[index].value
         }));
         console.log('Links:', linkData);
+        let item;
+        for (const key in linkData) {
+            if (Object.hasOwnProperty.call(linkData, key)) {
+                item = linkData[key];
+                
+                console.log(item.link); // Accessing link property of each item
+                console.log(item.social); // Accessing social property of each item
+            }
+        }
         // Here you can do something with the links, like send them to a server
     });
 });
