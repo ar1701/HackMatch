@@ -13,9 +13,9 @@ body {
 }
 
 .container {
-    max-width: 800px; 
-    margin: 20px auto; /* Center the container and add spacing from top */
-    padding: 20px;
+    max-width: 900px; 
+    margin: 150px auto; /* Center the container and add spacing from top */
+    
     display: flex; /* Set container as flexbox */
     justify-content: space-between; /* Space between sections */
 }
@@ -73,7 +73,7 @@ body {
 }
 
 .section {
-    width: 45%; /* Set width for sections */
+    width: 650px; /* Set width for sections */
     border-radius: 10px; /* Add border radius */
     background-color: #fff; /* White background */
     padding: 20px; /* Add padding */
@@ -93,12 +93,14 @@ select {
 
 input[type="submit"],
 button[type="button"] {
+    width:100px;
     background-color: #007bff;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 10px;
     margin-bottom: 15px; /* Add spacing between buttons */
 }
 
@@ -116,7 +118,8 @@ input[type="checkbox"] {
 
 /* Add spacing between buttons */
 .add-btn {
-    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 2px;
 }
 
 /* Adjust spacing between sections */
@@ -138,4 +141,8 @@ select {
     background-size: 20px 20px;
     cursor: pointer;
 
+}
+
+h2{
+    margin-bottom: 5px;
 }
