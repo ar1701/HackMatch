@@ -16,6 +16,15 @@ body {
     max-width: 800px; 
     margin: 0 auto;
     padding: 20px;
+    
+}
+
+.com{
+  border: 1px solid #ccc;
+    padding: 1em;
+    margin: 1em 0;
+    text-align: center;
+    border-radius:15px;
 }
 
 
@@ -28,6 +37,7 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
 
 .navbar-brand {
     font-size: 24px;
@@ -107,6 +117,10 @@ body {
     height: 250px;
     opacity: 0.8;
     
+  }
+  #user {
+    font-weight: bold; /* Make the user's name bold */
+    color: #0056b3; /* Set color of the user's name */
   }
   
   #exploreBtn {
