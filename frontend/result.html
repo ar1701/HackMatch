@@ -99,31 +99,31 @@
     <div class="result-info">
         <h3><p>Name:<input type="text" id="myInput" name="myInput" ></h3>
           <h3><p>Score:<input type="text" id="myInput" name="myInput"></p></h3>
-          <button onclick="Send()">Send Notification</button>
+          <button onclick="Send()">Send Email</button>
     </div>
 
     <div class="result-info">
         <h3><p>Name:<input type="text" id="myInput" name="myInput" ></h3>
           <h3><p>Score:<input type="text" id="myInput" name="myInput"></p></h3>
-          <button onclick="Send()">Send Notification</button>
+          <button onclick="Send()">Send Email</button>
     </div>
 
     <div class="result-info">
         <h3><p>Name:<input type="text" id="myInput" name="myInput" ></h3>
           <h3><p>Score:<input type="text" id="myInput" name="myInput"></p></h3>
-          <button onclick="Send()">Send Notification</button>
+          <button onclick="Send()">Send Email</button>
     </div>
 
     <div class="result-info">
         <h3><p>Name:<input type="text" id="myInput" name="myInput" ></h3>
           <h3><p>Score:<input type="text" id="myInput" name="myInput"></p></h3>
-          <button onclick="Send()">Send Notification</button>
+          <button onclick="Send()">Send Email</button>
     </div>
 
     <div class="result-info">
         <h3><p>Name:<input type="text" id="myInput" name="myInput" ></h3>
           <h3><p>Score:<input type="text" id="myInput" name="myInput"></p></h3>
-          <button onclick="Send()">Send an Email</button>
+          <button onclick="Send()">Send Email</button>
     </div>
 
     
@@ -132,11 +132,14 @@
   <section id="result-section" class="hidden">
     <div id="result-list"></div>
   </section>
-
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js">
 </script>
   <script>
     function Send(){
+      var name ="Ishika";
+       var body = "Hello, " +  name + " this site. <br/>Want to collab for a hack !! <br/>Regards";
+       var subject= "New message from " + name + ".";
         console.log("Function call");
         Email.send({
         Host : "smtp.elasticemail.com",
@@ -144,10 +147,18 @@
         Password : "D41A0785817C05AEEA1254AD6D2FAA1D93E8",
         To : "ishikaishani97@gmail.com",
         From : "ishikaishani97@gmail.com",
-        Subject : "This is the subject",
-        Body : "And this is the body"
+        Subject : subject,
+        Body : body,
 }).then(
-  message => alert(message)
+  message => {
+    if(message=='OK'){
+      swal(" Successful", "Email Send", "success");
+    }
+    else{
+      swal("Something went wrong!!","Failure", "error");
+    }
+    }
+  
 );
 
 
