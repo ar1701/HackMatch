@@ -1,0 +1,34 @@
+{
+          "skills": [],
+          "project": [
+                    {
+                              "summary": [],
+                              "link": [],
+                              "stacks": []
+                    }
+          ],
+          "internship": [
+                    {
+                              "stacks":[],
+                              "company":[],
+                              "duration":[],
+                              "summary":[]
+                    }
+          ],
+          "hackathon": [
+                    {
+                              "summary": [],
+                              "gitLink": [],
+                              "stacks": []
+                    }
+          ],
+          "work/experience": [
+                    {
+                              "company/club":[],
+                              "summary": [],
+                              "role": [],
+                              "duration": []
+                    }
+          ],
+          "certificates": []
+}
