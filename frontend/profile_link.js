@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Event listener for initial "Add" button
+    
     const addBtn = document.querySelector('.add-btn');
     addBtn.addEventListener('click', addLinkInput);
 
