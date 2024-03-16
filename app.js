@@ -144,7 +144,7 @@ app.post("/signup/home", async (req, res) => {
       bio: "",
     });
     await newProfile.save();
-    res.render("home.ejs");
+    res.redirect("/login");
   } catch (e) {
     req.flash("success", "Already Exist");
     res.redirect("/signup");
