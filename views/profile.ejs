@@ -38,9 +38,9 @@
           <section id="about" class="section active">
             <h2>Basic Information</h2>
             <form method="post" action="/profile?_method=PATCH">
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="name"
-                value=""><br><br>
+              <label for="name">Username:</label>
+              <input type="text" id="name" name="username"
+                value="<%= username %>"><br><br>
               <label for="gender">Gender:</label>
               <select id="gender" name="gender">
                 <option value disabled >Select an option</option>
@@ -50,10 +50,10 @@
               </select><br><br>
               <label for="email">Email:</label>
               <input type="email" id="email" name="email"
-                value=""><br><br>
+                value="<%= email %> "><br><br>
               <label for="phone">Phone:</label>
               <input type="text" id="phone" name="phone"
-                value=""><br><br>
+                value="<%= phone %>"><br><br>
 
             </section>
           </div>
