@@ -31,30 +31,36 @@ const { storage } = require("./cloudConfig.js");
 const upload = multer({ storage });
 const dbUrl = process.env.ATLASDB_URL;
 
+
+
 const store = MongoStore.create({
   mongoUrl: dbUrl,
   crypto: {
     secret: process.env.SECRET,
   },
-  touchAfter: 24 * 60 * 60,
+  touchAfter: 24*60*60,
 });
 
-store.on("error", () => {
+store.on("error", ()=>{
   console.log("Error in MONGO SESSION STORE: ", error);
-});
+})
 
-app.use(
-  session({
-    secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-      expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
-      maxAge: 7 * 24 * 60 * 60 * 1000,
-      httpOnly: true,
-    },
-  })
-);
+const sessionOptions = {
+store,
+secret: process.env.SECRET,
+resave: false,
+saveUninitialized: true,
+cookie: {
+  expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+  maxAge: 7 * 24 * 60 * 60 * 1000,
+  httpOnly: true,
+},
+};
+
+
+app.use(session(sessionOptions));
+
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
@@ -310,6 +316,10 @@ app.post("/profile/education", async (req, res) => {
   });
   await newExp.save();
   res.redirect("/user/home");
+});
+
+app.all("*", (req, res, next) => {
+  res.redirect("/main");
 });
 
 let port = 8080;
