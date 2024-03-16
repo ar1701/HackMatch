@@ -14,6 +14,7 @@ const User = require("./model/user.js");
 const Profile = require("./model/profile.js");
 const Resume = require("./model/resume.js");
 const Info = require("./model/info.js");
+const techStack = require("./model/techStack.js");
 
 const Project = require("./model/project.js");
 const workExp = require("./model/workExp.js");
@@ -102,6 +103,8 @@ app.post(
     failureFlash: true,
   }),
   async (req, res) => {
+    let {username} = req.body;
+    req.session.user = {username};
     res.redirect("/user/home");
   }
 );
@@ -110,8 +113,10 @@ app.get("/signup", (req, res) => {
   res.render("index.ejs");
 });
 
-app.get("/user/home", (req, res) => {
-  res.render("home.ejs");
+app.get("/user/home", async(req, res) => {
+  const {username} = req.session.user;
+  const user = await User.findOne({username});
+  res.render("home.ejs" , {username});
 });
 
 app.get("/profile/education", (req, res) => {
@@ -123,6 +128,7 @@ app.post("/signup/home", async (req, res) => {
     let { username, email, phone, password } = req.body;
     req.session.user = { username, email, phone };
     const newUser = new User({ username, email, phone });
+   
 
     await User.register(newUser, password);
 
@@ -139,12 +145,15 @@ app.post("/signup/home", async (req, res) => {
   }
 });
 
-app.get("/profile", (req, res) => {
+app.get("/profile", async (req, res) => {
   // if (!req.session.user) {
   //   return res.redirect("/signup");
   // }
-  // const {email} = req.session.user;
-  res.render("profile.ejs");
+  const {username} = req.session.user;
+  const user = await User.findOne({username});
+  console.log(user);
+
+  res.render("profile.ejs", {name: user.name, email: user.email, phone: user.phone, username: username});
 });
 
 app.get("/main", (req, res) => {
@@ -159,17 +168,19 @@ app.get("/result", (req, res) => {
 
 app.patch("/profile", async (req, res) => {
   let { name, gender, email, phone, bio } = req.body;
-  // const { email } = req.session.user;
+  const { username } = req.session.user;
   req.session.user = { name, email, phone, bio };
-  // const user = await User.findOne({ email });
-  // const profile = await Profile.findOne({ user: user._id });
+  const user = await User.findOne({ username });
+  const profile = await Profile.findOne({ user: user._id });
 
   // if (!user) {
   //   return res.status(404).send("User not found");
   // }
 
-  await Profile.updateOne({email: email}, {
+  await Profile.updateOne({user: user._id}, {
     $set: {
+      name: name,
+      email:email,
       gender: gender,
       bio: bio,
     },
@@ -257,8 +268,8 @@ app.get("/profile/exp", (req, res) => {
 app.post("/profile/exp", upload.single("resume"), async (req, res) => {
   let link = req.file.path;
   let filename = req.file.filename;
-  const { email } = req.session.user;
-  const user = await User.findOne({ email });
+  const { username } = req.session.user;
+  const user = await User.findOne({ username });
   let resume = new Resume({
     user: user._id,
     image: {
@@ -269,6 +280,21 @@ app.post("/profile/exp", upload.single("resume"), async (req, res) => {
   await resume.save();
   res.redirect("/user/home");
 });
+
+app.post("/dashboard", async(req,res)=>{
+  let {techStack1,techStack2,techStack3,techStack4,techStack5} = req.body;
+  const newTechStack = new techStack({
+    techStack1: techStack1,
+    techStack2: techStack2,
+    techStack3: techStack3,
+    techStack4: techStack4,
+    techStack5: techStack5,
+  })
+
+  await newTechStack.save();
+  res.redirect("/user/home");
+
+})
 
 app.post("/profile/education", async (req, res) => {
   let { companyName, summary, role, duration } = req.body;
