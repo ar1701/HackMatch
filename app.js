@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV != "production") {
+  require("dotenv").config(); 
+}
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -7,8 +11,12 @@ const ejsMate = require("ejs-mate");
 const User = require("./model/user.js");
 const Skill = require("./model/skill.js");
 const Profile = require("./model/profile.js");
+const Resume = require("./model/resume.js");
 const session = require("express-session");
 const bodyParser = require("body-parser");
+const multer = require("multer");
+const {storage} = require("./cloudConfig.js");
+const upload = multer({storage});
 
 app.use(
   session({
@@ -43,18 +51,21 @@ main()
   })
   .catch((err) => console.log(err));
 
-  // app.get("/home", (req, res) => {
-  //   res.render("home.ejs");
-  // });
+// app.get("/home", (req, res) => {
+//   res.render("home.ejs");
+// });
 
 app.get("/signup", (req, res) => {
   res.render("index.ejs");
 });
 
-
-app.get("/user/home", (req,res)=>{
+app.get("/user/home", (req, res) => {
   res.render("home.ejs");
-})
+});
+
+app.get("/profile/education", (req, res) => {
+  res.render("edu.ejs");
+});
 
 app.post("/signup/home", async (req, res) => {
   let { name, email, phone } = req.body;
@@ -66,11 +77,11 @@ app.post("/signup/home", async (req, res) => {
   });
   await newUser.save();
   const newProfile = new Profile({
-    name: name,
-    email: email,
-    phone: phone,
+    user: newUser._id,
+    gender: "",
+    bio: "",
   });
-  await newUser.save();
+  await newProfile.save();
   res.render("home.ejs");
 });
 
@@ -78,37 +89,36 @@ app.get("/profile", (req, res) => {
   if (!req.session.user) {
     return res.redirect("/signup");
   }
-  const { name, email, phone } = req.session.user;
-  res.render("profile.ejs", { name, email, phone });
+  const { name, email, phone, bio} = req.session.user;
+  res.render("profile.ejs", { name, email, phone, bio});
 });
 
-
-
 app.patch("/profile", async (req, res) => {
-  let { name, gender, bio } = req.body;
+  let { name, gender, phone, bio } = req.body;
   const { email } = req.session.user;
+  req.session.user = { name, email, phone,bio};  
   const user = await User.findOne({ email });
+  const profile = await Profile.findOne({ user: user._id });
+  
   if (!user) {
     return res.status(404).send("User not found");
   }
-  // const data = new basicInfo({
-  //   user: user._id,
-  //   gender: gender,
-  //   bio: bio,
-  // })
-  // await data.save();
- await Profile.updateOne(
-    // Criteria to match the document(s) to update
-    { user: 'user._id'},
-    // Update fields and values
-    { 
+  
+  await Profile.findByIdAndUpdate(profile._id,
+  {
       $set: {
-        name: name,
         gender: gender,
         bio: bio,
       },
-    },
- )
+    }
+  );
+  await User.findByIdAndUpdate(user._id,
+  {
+      $set: {
+        name:name,
+      },
+    }
+  );
 
   res.redirect("/profile");
 });
@@ -130,21 +140,50 @@ app.post("/profile/expj", async (req, res) => {
   }
 });
 
-app.get("/profile/education", (req,res)=>{
+app.get("/profile/education", (req, res) => {
   res.render("edu.ejs");
-})
-app.get("/profile/link", (req,res)=>{
+});
+app.get("/profile/link", (req, res) => {
   res.render("link.ejs");
-})
-app.get("/profile/project", (req,res)=>{
+});
+app.get("/profile/project", (req, res) => {
   res.render("project.ejs");
-})
-app.get("/profile/exp", (req,res)=>{
+});
+app.get("/profile/exp", (req, res) => {
   res.render("exp.ejs");
-})
+});
+app.post("/profile/exp", upload.single('resume'), async (req, res) => {
+  let link = req.file.path;
+  let filename = req.file.filename;
+  const { email } = req.session.user;
+  const user = await User.findOne({ email });
+  let resume = new Resume({
+    url: user._id,
+    image: {
+      link: link,
+      filename: filename,
+    }
+  })
+  await resume.save();
+  res.redirect("/home");
 
 
-let port = 3000;
+
+
+
+
+
+  // let newList = new Listing(req.body.list);
+  //   newList.owner = req.user._id;
+    
+  //   newList.image = {url, filename};
+
+  //   await newList.save();
+  //   req.flash("success", "New Listing Created!");
+  //   res.redirect("/listings");
+});
+
+let port = 8080;
 app.listen(port, (req, res) => {
   console.log(`Listening to the port: ${port}`);
 });

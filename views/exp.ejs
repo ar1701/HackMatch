@@ -22,26 +22,48 @@
       </ul>
     </div>
   </nav>
-
   <nav class="sub-navbar">
     <ul class="sub-navbar-nav">
-        <li><a href="/user/home" class="sub-nav-link active">About</a></li>
-        <li><a href="/profile/education" class="sub-nav-link">Education</a></li>
-        <li><a href="/profile/exp" class="">Experience</a></li>
-        <li><a href="/profile/project" class="">Projects</a></li>
-        <li><a href="/profile/link" class="sub-nav-link">Links</a></li>
+      <li><a href="/user/home" class="sub-nav-link active">Home</a></li>
+      <li><a href="/profile/education" class="sub-nav-link">Work Experience</a></li>
+      <li><a href="./profile/exp"  class="sub-nav-link">Resume Upload</a></li>
+      <li><a href="/profile/project" class="sub-nav-link">Projects</a></li>
+      <li><a href="/profile/link" class="sub-nav-link">Skills</a></li>
     </ul>
   </nav>
+    <div class="intro-section">
+      <span>Share your Resume</span>
+      
+    </div>
 <main>
   <div class="container">
-    <h2>Upload Resume</h2>
     <form id="pdf-upload-form">
+      <div class="file-input-wrapper">
       <input type="file" id="pdf-file" accept=".pdf">
-      <input type="submit" value="Upload">
+      </div>
+      <br><input type="submit" value="Upload">
     </form>
   </div>
 </main>
 
-<script src="profile_res.js"></script>
+<script>
+  
+
+document.addEventListener("DOMContentLoaded", function() {
+    const pdfUploadForm = document.getElementById('pdf-upload-form');
+    const pdfFileInput = document.getElementById('pdf-file');
+
+    pdfUploadForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const file = pdfFileInput.files[0];
+        if (file && file.type === 'application/pdf') {
+            
+            console.log('File uploaded:', file.name);
+        } else {
+            alert('Please select a PDF file.');
+        }
+    });
+});
+</script>
 </body>
 </html>

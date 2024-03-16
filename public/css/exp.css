@@ -44,7 +44,7 @@ body {
 }
 /* Sub Navbar styles */
 .sub-navbar {
-    background-color: #007bff; 
+    background-color: #0056b3; 
     color: #fff; 
     padding: 10px 20px;
 }
@@ -71,10 +71,28 @@ body {
     max-width: 800px; 
     margin: 0 auto;
     padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc; /* Add border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height:350px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the text */
 }
 
+.upload-section {
+    text-align: center;
+  }
+.file-input-wrapper {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
 
 form {
+    margin-top: 150px;
     margin-bottom: 20px;
 }
 
@@ -99,3 +117,27 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #0056b3;
 }
+.intro-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the text */
+  }
+  
+  .intro-section span {
+    font-size: 48px;
+
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .intro-section p {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #555;
+  }
+  /* .sub-nav-link.active {
+    text-decoration: underline;
+} */

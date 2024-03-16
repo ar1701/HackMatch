@@ -3,54 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Upload PDF</title>
+  <title>Profile Page</title>
   <link rel="stylesheet" href="/css/link.css">
 </head>
 <body>
 
-
 <nav class="navbar">
-    <div class="navbar-brand">
-      <span class="logo">HackMatch</span>
-    </div>
-    <div class="navbar-menu">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Dashboard</a></li>
-      </ul>
-    </div>
-  </nav>
-
- 
-  <nav class="sub-navbar">
-    <ul class="sub-navbar-nav">
-        <li><a href="/user/home" class="sub-nav-link active">About</a></li>
-        <li><a href="/profile/education" class="sub-nav-link">Education</a></li>
-        <li><a href="/profile/exp" class="">Experience</a></li>
-        <li><a href="/profile/project" class="">Projects</a></li>
-        <li><a href="/profile/link" class="sub-nav-link">Links</a></li>
+  <div class="navbar-brand">
+    <span class="logo">HackMatch</span>
+  </div>
+  <div class="navbar-menu">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a href="/profile" class="nav-link">Profile</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Dashboard</a></li>
     </ul>
-  </nav>
+  </div>
+</nav>
 
+
+<nav class="sub-navbar">
+  <ul class="sub-navbar-nav">
+    <li><a href="/user/home" class="sub-nav-link active">Home</a></li>
+    <li><a href="/profile/education" class="sub-nav-link">Work Experience</a></li>
+    <li><a href="/profile/exp" class="sub-nav-link">Resume Upload</a></li>
+    <li><a href="/profile/project" class="sub-nav-link">Projects</a></li>
+    <li><a href="/profile/link" class="sub-nav-link">Skills</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="container">
+    <!-- Links Section -->
+    <section id="links" class="section active">
+      <h2>Social Media Links</h2>
+      <form id="links-form">
+        <div id="links-container">
+          <div class="link-input">
+            <input type="text" name="link[]">
+            <select name="social-option">
+              <option value="" disabled selected>Select an option</option>
+            <option value="Linkedln">Linkedln</option>
+
+                <option value="GitHub">GitHub</option>
+                <option value="Twitter">Twitter</option>
+                <option value="YouTube">YouTube</option>
+            </select>
+            <!---<label for="linkedin">LinkedIn:</label>
+            <input type="text" name="linkedin[]"><br><br>--->
+            <button type="button" class="add-btn">Add</button>
+          </div>
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+    </section>
     
-        <main>
-            <div class="container">
-              <h2>Social Media Links</h2>
-              <form id="links-form">
-                <div id="links-container">
-                
-                  <div class="link-input">
-                    <label for="linkedin">LinkedIn:</label>
-                    <input type="text" name="linkedin[]"><br><br>
-                    <button type="button" class="add-btn">Add</button>
-                  </div>
-                </div>
-                <input type="submit" value="Save">
-              </form>
-            </div>
-          </main>
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <h2>Add Skills</h2>
+      <form id="skills-form">
+        <div id="skills-container">
+          <div class="skill-input">
+            <input type="text" name="skill[]">
+            <button type="button" class="add-skill-btn">Add</button>
+          </div>
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+    </section>
+  </div>
+</main>
 
-      
-      <script src="/scripts/link.js"></script>
+<script>
+  // profile_link.js
+
+document.addEventListener("DOMContentLoaded", function() {
+    const linksForm = document.getElementById('links-form');
+    const linksContainer = document.getElementById('links-container');
+
+    // Function to handle adding new link input
+    function addLinkInput() {
+        const newLinkInput = document.createElement('div');
+        newLinkInput.classList.add('link-input');
+        newLinkInput.innerHTML = `
+            <input type="text" name="link[]">
+            <select name="social-option">
+            <option value="Linkedln">Linkedln</option>
+
+                <option value="GitHub">GitHub</option>
+                <option value="Twitter">Twitter</option>
+                <option value="YouTube">YouTube</option>
+            </select>
+            <button type="button" class="add-btn">Add</button> <!-- Add button -->
+        `;
+        linksContainer.appendChild(newLinkInput);
+
+        const addBtns = document.querySelectorAll('.add-btn');
+        addBtns.forEach(btn => {
+            btn.addEventListener('click', addLinkInput);
+        });
+    }
+
+    // Event listener for initial "Add" button
+    const addBtn = document.querySelector('.add-btn');
+    addBtn.addEventListener('click', addLinkInput);
+
+    // Event listener for form submission
+    linksForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const links = document.querySelectorAll('input[name="link[]"]');
+        const socialOptions = document.querySelectorAll('select[name="social-option"]');
+        const linkData = Array.from(links).map((link, index) => ({
+            link: link.value,
+            social: socialOptions[index].value
+        }));
+        console.log('Links:', linkData);
+        // Here you can do something with the links, like send them to a server
+    });
+});
+
+
+const skillsForm = document.getElementById('skills-form');
+    const skillsContainer = document.getElementById('skills-container');
+    const addSkillBtn = document.querySelector('.add-skill-btn');
+
+    addSkillBtn.addEventListener('click', function() {
+        const skillInput = document.createElement('div');
+        skillInput.classList.add('skill-input');
+        skillInput.innerHTML = `
+            <input type="text" name="skill[]">
+            <button type="button" class="remove-btn">Remove</button>
+        `;
+        skillsContainer.appendChild(skillInput);
+    });
+
+    skillsContainer.addEventListener('click', function(e) {
+        if (e.target.classList.contains('remove-btn')) {
+            e.target.parentElement.remove();
+        }
+    });
+</script>
 </body>
 </html>
