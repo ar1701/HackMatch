@@ -12,9 +12,10 @@ body {
 }
 
 .container {
-    max-width: 800px; 
+    max-width: 900px; 
     margin: 0 auto;
     padding: 20px;
+    margin-top:90px;
 }
 
 
@@ -53,6 +54,7 @@ body {
     padding: 10px 20px;
 }
 
+
 .sub-navbar-nav {
     list-style-type: none;
     display: flex;
@@ -69,8 +71,30 @@ body {
 
 .sub-navbar-nav a.active {
     font-weight: bold;
+
+}
+h2 {
+    margin-top:30px;
+    margin: 12px;
+  }
+
+
+.left-section {
+    border-right: 1px solid #ccc;
+    padding-right: 30px;
+    width: 50%; /* Set width for left section */
+    float: left; /* Float left to align to the left */
+    margin-right: 10px; 
+    border-radius: 10px;
 }
 
+/* Right section styles */
+.right-section {
+    width: 45%; /* Set width for right section */
+    float: right; /* Float right to align to the right */
+    margin-left: 10px;
+    border-radius: 10px;
+}
 
 .section {
     display: none;
@@ -80,24 +104,31 @@ body {
     display: block;
 }
 
+
+
 form {
-    margin-bottom: 20px;
+    margin-bottom: 150px;
+    margin-top: 20px;
 }
 
 label {
-    font-weight: bold;
+    padding-bottom:20px;
+    
 }
 
 input[type="text"],
 input[type="email"],
 select,
 textarea {
-    width: 100%;
-    padding: 10px;
+    width: calc(100% - 20px);
+    margin-top: 10px;
+    padding: 15px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
     box-sizing: border-box;
+    font-size: 18px;
+    outline: none;
 }
 
 input[type="submit"] {
@@ -123,4 +154,7 @@ select {
     background-position: right center;
     background-size: 20px 20px;
     cursor: pointer;
+}
+select option[value=""][disabled] {
+    color: #999; /* Placeholder color */
 }
