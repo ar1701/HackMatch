@@ -1,0 +1,101 @@
+/* upload_pdf_styles.css */
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+    margin: 0;
+}
+
+/* Navbar styles */
+.navbar {
+    height: 80px;
+    background-color: #0056b3; /* Dark background */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.navbar-menu ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-right: 20px;
+}
+
+.navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+/* Sub Navbar styles */
+.sub-navbar {
+    background-color: #007bff; 
+    color: #fff; 
+    padding: 10px 20px;
+}
+
+.sub-navbar-nav {
+    list-style-type: none;
+    display: flex;
+}
+
+.sub-navbar-nav li {
+    margin-right: 20px;
+}
+
+.sub-navbar-nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sub-navbar-nav a.active {
+    font-weight: bold;
+}
+
+.container {
+    max-width: 800px; 
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+form {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input[type="file"] {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,141 @@
+/* profile_styles.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; 
+    margin: 0;
+}
+
+.container {
+    max-width: 800px; 
+    margin: 20px auto; /* Center the container and add spacing from top */
+    padding: 20px;
+    display: flex; /* Set container as flexbox */
+    justify-content: space-between; /* Space between sections */
+}
+
+.navbar {
+    height: 80px;
+    background-color: #0056b3; 
+    color: #fff; 
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.navbar-menu ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-right: 20px;
+}
+
+.navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sub-navbar {
+    background-color: #0056b3; 
+    color: #fff; 
+    padding: 10px 20px;
+}
+
+.sub-navbar-nav {
+    list-style-type: none;
+    display: flex;
+}
+
+.sub-navbar-nav li {
+    margin-right: 20px;
+}
+
+.sub-navbar-nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sub-navbar-nav a.active {
+    font-weight: bold;
+}
+
+.section {
+    width: 45%; /* Set width for sections */
+    border-radius: 10px; /* Add border radius */
+    background-color: #fff; /* White background */
+    padding: 20px; /* Add padding */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+}
+
+/* Form input styles */
+input[type="text"],
+select {
+    width: 100%; /* Adjust width to 100% */
+    padding: 10px;
+    margin-bottom: 15px; /* Add spacing between inputs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"],
+button[type="button"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px; /* Add spacing between buttons */
+}
+
+input[type="submit"]:hover,
+button[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+/* Add spacing between options */
+input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 20px;
+
+}
+
+/* Add spacing between buttons */
+.add-btn {
+    margin-right: 10px;
+}
+
+/* Adjust spacing between sections */
+#skills {
+    margin-left: 20px; /* Add spacing between sections */
+}
+
+
+select {
+    appearance: none; 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    
+
+    padding-right: 30px; 
+    background-image: url('arrow-down.svg'); 
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 20px 20px;
+    cursor: pointer;
+
+}
