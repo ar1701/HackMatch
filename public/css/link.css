@@ -1,4 +1,4 @@
-/* profile_styles.css */
+/* profile_link.css */
 
 * {
     margin: 0;
@@ -12,18 +12,10 @@ body {
     margin: 0;
 }
 
-.container {
-    max-width: 900px; 
-    margin: 150px auto; /* Center the container and add spacing from top */
-    
-    display: flex; /* Set container as flexbox */
-    justify-content: space-between; /* Space between sections */
-}
-
 .navbar {
     height: 80px;
-    background-color: #0056b3; 
-    color: #fff; 
+    background-color: #0056b3;
+    color: #fff;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -49,8 +41,8 @@ body {
 }
 
 .sub-navbar {
-    background-color: #0056b3; 
-    color: #fff; 
+    background-color:#0056b3;
+    color: #fff;
     padding: 10px 20px;
 }
 
@@ -72,17 +64,25 @@ body {
     font-weight: bold;
 }
 
+
+.container {
+    max-width: 900px; 
+    margin: 150px auto; /* Center the container and add spacing from top */
+    display: flex; /* Set container as flexbox */
+    flex-direction: column; /* Align sections vertically */
+    align-items: center; /* Center items horizontally */
+}
+
 .section {
-    width: 650px; /* Set width for sections */
+    width: 100%; /* Set width for sections */
     border-radius: 10px; /* Add border radius */
     background-color: #fff; /* White background */
     padding: 20px; /* Add padding */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+    margin-bottom: 20px; /* Add margin between sections */
 }
 
-/* Form input styles */
-input[type="text"],
-select {
+input[type="text"] {
     width: 100%; /* Adjust width to 100% */
     padding: 10px;
     margin-bottom: 15px; /* Add spacing between inputs */
@@ -91,65 +91,21 @@ select {
     box-sizing: border-box;
 }
 
-input[type="submit"],
-button[type="button"] {
-    width:100px;
+.submit-btn {
+    width: 100%;
     background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
-    margin-bottom: 15px; /* Add spacing between buttons */
 }
 
-input[type="submit"]:hover,
-button[type="button"]:hover {
+.submit-btn:hover {
     background-color: #0056b3;
 }
 
-/* Add spacing between options */
-input[type="checkbox"] {
-    margin-right: 10px;
-    margin-top: 20px;
-
-}
-
-/* Add spacing between buttons */
-.add-btn {
-    margin-top: 10px;
-    margin-bottom: 2px;
-}
-
-/* Adjust spacing between sections */
-#skills {
-    margin-left: 20px; /* Add spacing between sections */
-}
-
-
-select {
-    appearance: none; 
-    -webkit-appearance: none; 
-    -moz-appearance: none; 
-    
-
-    padding-right: 30px; 
-    background-image: url('arrow-down.svg'); 
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: 20px 20px;
-    cursor: pointer;
-
-}
-
 h2{
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
-
-select option[value=""][disabled] {
-    color: #999; /* Placeholder color */
-}
-/* .sub-nav-link.active {
-    text-decoration: underline;
-} */

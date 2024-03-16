@@ -18,7 +18,7 @@
   <div class="navbar-menu">
     <ul class="navbar-nav">
       <li class="nav-item"><a href="/profile" class="nav-link">Profile</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Dashboard</a></li>
+      <li class="nav-item"><a href="/dash" class="nav-link">Dashboard</a></li>
     </ul>
   </div>
 </nav>
@@ -37,17 +37,17 @@
 <main>
   <div class="container">
     <section id="education" class="section active">
-      <form>
+      <form method="post" action="/profile/education">
         <label for="company-name">Company Name:</label>
-        <input type="text" id="degree-type" name="degree-type"><br><br>
+        <input type="text" id="degree-type" name="companyName"><br><br>
         <label for="summary">Summary:</label>
-        <input type="text" id="institution" name="institution"><br><br>
+        <input type="text" id="institution" name="summary"><br><br>
         <label for="role">Role:</label>
-        <input type="text" id="field-of-study" name="field-of-study"><br><br>
+        <input type="text" id="field-of-study" name="role"><br><br>
         
         <label for="expected-month">Duration:</label>
        
-        <select id="expected-month" name="expected-month">
+        <select id="expected-month" name="duration">
           <option value="" disabled selected>Select an option</option>
             <option value="1">1 month</option>
             <option value="2">2 months</option>
@@ -71,7 +71,7 @@
   </div>
 </main>
 
-<script>
+<!-- <script>
   document.addEventListener("DOMContentLoaded", function() {
     const educationForm = document.querySelector('#education form');
 
@@ -81,6 +81,6 @@
     });
 });
 
-</script>
+</script> -->
 </body>
 </html>

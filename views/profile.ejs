@@ -16,8 +16,8 @@
         <ul class="navbar-nav">
           <li class="nav-item"><a href="/profile"
               class="nav-link">Profile</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Dashboard</a></li>
-        </ul>
+              <li class="nav-item"><a href="/dash" class="nav-link">Dashboard</a></li>
+            </ul>
       </div>
     </nav>
 
@@ -40,7 +40,7 @@
             <form method="post" action="/profile?_method=PATCH">
               <label for="name">Name:</label>
               <input type="text" id="name" name="name"
-                value="<%= name %>"><br><br>
+                value=""><br><br>
               <label for="gender">Gender:</label>
               <select id="gender" name="gender">
                 <option value disabled >Select an option</option>
@@ -50,10 +50,10 @@
               </select><br><br>
               <label for="email">Email:</label>
               <input type="email" id="email" name="email"
-                value="<%= email %>"><br><br>
+                value=""><br><br>
               <label for="phone">Phone:</label>
               <input type="text" id="phone" name="phone"
-                value="<%= phone %>"><br><br>
+                value=""><br><br>
 
             </section>
           </div>

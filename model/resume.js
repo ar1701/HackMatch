@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const User = require("./user.js");
-const { string } = require("joi");
+
 
 
 const resumeSchema = new Schema({

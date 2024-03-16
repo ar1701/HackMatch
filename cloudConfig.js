@@ -10,7 +10,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "Hack_Match",
+    folder: "WanderLust_DEV",
     allowedFormats: ["png", "jpeg", "jpg", "pdf"], // allowed file formats
     fileFilter: (req, file) => {
       // Ensure that only pdf files are allowed
