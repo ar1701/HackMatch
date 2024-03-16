@@ -56,3 +56,23 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+const skillsForm = document.getElementById('skills-form');
+    const skillsContainer = document.getElementById('skills-container');
+    const addSkillBtn = document.querySelector('.add-skill-btn');
+
+    addSkillBtn.addEventListener('click', function() {
+        const skillInput = document.createElement('div');
+        skillInput.classList.add('skill-input');
+        skillInput.innerHTML = `
+            <input type="text" name="skill[]">
+            <button type="button" class="remove-btn">Remove</button>
+        `;
+        skillsContainer.appendChild(skillInput);
+    });
+
+    skillsContainer.addEventListener('click', function(e) {
+        if (e.target.classList.contains('remove-btn')) {
+            e.target.parentElement.remove();
+        }
+    });

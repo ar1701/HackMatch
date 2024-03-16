@@ -59,13 +59,14 @@
     
     <!-- Skills Section -->
     <section id="skills" class="section">
-      <h2>Rank your top 5 tech skills</h2>
+      <h2>Add Skills</h2>
       <form id="skills-form">
-        <label><input type="checkbox" name="skill" value="HTML"> HTML</label><br>
-        <label><input type="checkbox" name="skill" value="CSS"> CSS</label><br>
-        <label><input type="checkbox" name="skill" value="JavaScript"> JavaScript</label><br>
-        <label><input type="checkbox" name="skill" value="Python"> Python</label><br>
-        <label><input type="checkbox" name="skill" value="Java"> Java</label><br>
+        <div id="skills-container">
+          <div class="skill-input">
+            <input type="text" name="skill[]">
+            <button type="button" class="add-skill-btn">Add</button>
+          </div>
+        </div>
         <input type="submit" value="Submit">
       </form>
     </section>
