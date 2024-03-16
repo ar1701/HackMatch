@@ -38,22 +38,20 @@
       <h2>Social Media Links</h2>
       <form id="links-form">
         <div id="links-container">
+          <!-- Default input fields -->
           <div class="link-input">
-            <input type="text" name="link[]">
-            <select name="social-option">
-              <option value="" disabled selected>Select an option</option>
-            <option value="Linkedln">Linkedln</option>
-
-                <option value="GitHub">GitHub</option>
-                <option value="Twitter">Twitter</option>
-                <option value="YouTube">YouTube</option>
-            </select>
-            <!---<label for="linkedin">LinkedIn:</label>
-            <input type="text" name="linkedin[]"><br><br>--->
-            <button type="button" class="add-btn">Add</button>
+            <input type="text" name="link[]" placeholder="LinkedIn">
+          </div>
+          <div class="link-input">
+            <input type="text" name="link[]" placeholder="Twitter">
+          </div>
+          <div class="link-input">
+            <input type="text" name="link[]" placeholder="GitHub">
+          </div>
+          <div class="link-input">
+            <input type="text" name="link[]" placeholder="YouTube">
           </div>
         </div>
-        <input type="submit" value="Submit">
       </form>
     </section>
     
@@ -62,14 +60,28 @@
       <h2>Add Skills</h2>
       <form id="skills-form">
         <div id="skills-container">
+          <!-- Default input fields -->
           <div class="skill-input">
-            <input type="text" name="skill[]">
-            <button type="button" class="add-skill-btn">Add</button>
+            <input type="text" name="skill[]" placeholder="Enter skill">
+          </div>
+          <div class="skill-input">
+            <input type="text" name="skill[]" placeholder="Enter skill">
+          </div>
+          <div class="skill-input">
+            <input type="text" name="skill[]" placeholder="Enter skill">
+          </div>
+          <div class="skill-input">
+            <input type="text" name="skill[]" placeholder="Enter skill">
+          </div>
+          <div class="skill-input">
+            <input type="text" name="skill[]" placeholder="Enter skill">
           </div>
         </div>
-        <input type="submit" value="Submit">
       </form>
     </section>
+
+    <!-- Submit Button -->
+    <button type="submit" form="links-form" class="submit-btn">Submit</button>
   </div>
 </main>
 
