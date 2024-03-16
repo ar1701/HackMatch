@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <title>Tech Stack Search</title>
   <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
@@ -19,7 +19,6 @@
         </div>
       </nav>
       
-      
       <nav class="sub-navbar">
         <ul class="sub-navbar-nav">
           <li><a href="#" class="sub-nav-link active">Home</a></li>
@@ -29,35 +28,30 @@
           <li><a href="#" class="sub-nav-link">Skills</a></li>
         </ul>
       </nav>
+      
+  <section class="tech-stack-section">
+   
+    <br>
+    <h2>Enter Tech Stack</h2>
+    <form id="tech-stack-form" action="/jj">
+      <div id="tech-stack-inputs">
+        <input type="text" class="tech-stack-input" placeholder="Enter tech stack">
+      </div>
+      <button type="button" id="add-tech-stack-btn">Add Stack</button>
+      <button type="button" id="add-tech-stack-btn">Submit</button>
+      <br><br>
+      
+     <h2>Search For HackMates</h2>
+      <button type="button" id="search-btn">Search</button>
+    </form>
 
-<div class="container">
-  <section class="notification-section">
-    <div class="received-notification">
-      <h2>Received Notification</h2>
-      <ul id="received-notification-list">
-        <!-- Received notification items will be dynamically added here -->
-      </ul>
-    </div>
-    <div class="send-notification">
-      <h2>Send Notification</h2>
-      <form id="send-notification-form">
-       
-      </form>
-    </div>
+    
   </section>
   
-  <section class="tech-stack-section">
-    <h2>Find HackMate</h2>
-    <form id="tech-stack-form">
-      <input type="text" id="tech-stack-input" placeholder="Enter tech stack">
-      <button type="submit">Add</button>
-    </form>
-    <ul id="tech-stack-list">
-      <!-- Tech stack items will be dynamically added here -->
-    </ul>
+  <section id="result-section" class="hidden">
+    <div id="result-list"></div>
   </section>
-</div>
 
-<script src="dashboard.js"></script>
+  <script src="dashboard.js"></script>
 </body>
 </html>
