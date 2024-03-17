@@ -2,6 +2,9 @@
 
 HackMatch is a web application designed to facilitate team formation for various projects, whether it's software development, design, marketing, or any other collaborative endeavor. It provides a platform where individuals can connect with others possessing complementary skills and interests, fostering efficient and successful project collaboration.
 
+
+![Alt Text](https://i.imgur.com/h0TZXTN.png)
+
 ## Features
 
 - **User Authentication**: Robust authentication system ensures secure access to the platform, allowing users to create accounts or sign in securely.
@@ -18,6 +21,7 @@ HackMatch is a web application designed to facilitate team formation for various
 3. **Dashboard Exploration**: Explore the dashboard to search for potential team members based on your project requirements. Utilize various filters and search criteria to narrow down your search and identify suitable collaborators.
 4. **Resume Analysis**: Upload resumes of potential candidates, and let the Python scripts analyze them to provide you with a detailed assessment. Review the scores assigned to candidates to identify top collaborators for your project.
 5. **Initiate Collaboration**: Once you've identified potential team members, utilize the email integration feature to reach out to them directly through the platform. Initiate communication and collaboration to kickstart your project journey.
+![Alt Text](https://i.imgur.com/inDaRt1.png)
 
 ## Installation
 
