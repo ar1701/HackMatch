@@ -45,6 +45,9 @@ store.on("error", ()=>{
   console.log("Error in MONGO SESSION STORE: ", error);
 })
 
+
+
+
 const sessionOptions = {
 store,
 secret: process.env.SECRET,
@@ -57,8 +60,8 @@ cookie: {
 },
 };
 
-
 app.use(session(sessionOptions));
+app.use(flash());
 
 
 
@@ -84,7 +87,7 @@ main()
   })
   .catch((err) => console.log(err));
 
-app.use(flash());
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
@@ -92,12 +95,12 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.use((req, res, next) => {
-  res.locals.success = req.flash("success");
-  res.locals.error = req.flash("error");
-  res.locals.currUser = req.user;
-  next();
-});
+// app.use((req, res, next) => {
+//   res.locals.success = req.flash("success");
+//   res.locals.error = req.flash("error");
+//   res.locals.currUser = req.user;
+//   next();
+// });
 
 app.get("/login", (req, res) => {
   res.render("login.ejs");
@@ -111,6 +114,7 @@ app.post(
   async (req, res) => {
     let {username} = req.body;
     req.session.user = {username};
+    req.flash("success", "Welcome to Hack-Match!");
     res.redirect("/user/home");
   }
 );
@@ -122,7 +126,8 @@ app.get("/signup", (req, res) => {
 app.get("/user/home", async(req, res) => {
   const {username} = req.session.user;
   const user = await User.findOne({username});
-  res.render("home.ejs" , {username});
+  res.render("home.ejs" , {username, msg: req.flash("success"), msg2: req.flash("wupload"), msg5: req.flash("project"), msg6:req.flash("info")});
+ 
 });
 
 app.get("/profile/education", (req, res) => {
@@ -146,7 +151,6 @@ app.post("/signup/home", async (req, res) => {
     await newProfile.save();
     res.redirect("/login");
   } catch (e) {
-    req.flash("success", "Already Exist");
     res.redirect("/signup");
   }
 });
@@ -157,9 +161,8 @@ app.get("/profile", async (req, res) => {
   // }
   const {username} = req.session.user;
   const user = await User.findOne({username});
-  console.log(user);
 
-  res.render("profile.ejs", {name: user.name, email: user.email, phone: user.phone, username: username});
+  res.render("profile.ejs", {name: user.name, email: user.email, phone: user.phone, username: username, msg3:req.flash("profile")});
 });
 
 app.get("/main", (req, res) => {
@@ -196,7 +199,7 @@ app.patch("/profile", async (req, res) => {
   //     name: name,
   //   },
   // });
-
+  req.flash("profile", "Profile Updated!");
   res.redirect("/profile");
 });
 
@@ -221,6 +224,7 @@ app.post("/info", async (req, res) => {
   })
 
   await newInfo.save();
+  req.flash("info", "Skills and Link Uploaded!");
   res.redirect("/user/home");
 });
 
@@ -239,6 +243,7 @@ app.post("/project", async (req, res) => {
   })
 
   await newProject.save();
+  req.flash("project", "Project Uploaded!")
   res.redirect("/user/home");
 });
 // app.post("/profile/link", async (req, res) => {
@@ -284,6 +289,7 @@ app.post("/profile/exp", upload.single("resume"), async (req, res) => {
     },
   });
   await resume.save();
+  // req.flash("rupload", "Resume Uploaded!");
   res.redirect("/user/home");
 });
 
@@ -315,6 +321,7 @@ app.post("/profile/education", async (req, res) => {
     duration: duration,
   });
   await newExp.save();
+  req.flash("wupload", "Work Experience Uploaded!");
   res.redirect("/user/home");
 });
 
